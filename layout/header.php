@@ -46,7 +46,7 @@ session_start();
                     <a href="#" class="nav-link "><?= $_SESSION['nama'] ?></a>
                 </li>
                 <li class="nav-item">
-                    <form action="/logout" class="d-inline" method="POST" id="form-logout">
+                    <form action="/admin/logout.php" class="d-inline" method="POST" id="form-logout">
                         <a href="#" onclick="logout()" class="nav-link">Logout</a>
                     </form>
                 </li>

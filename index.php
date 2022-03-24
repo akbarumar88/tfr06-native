@@ -34,7 +34,8 @@ if (!empty($_POST)) {
             $_SESSION['username'] = $user['username'];
             $_SESSION['nama'] = $user['nama'];
 
-            
+            header("location: admin/index.php");
+            return;
         } else {
             // dd('masuk tidak ditemukanbroi');die;
             // User tidak ditemukan, set flash message

@@ -1,5 +1,12 @@
 <?php 
 
+session_start();
+if (empty($_SESSION['userid'])) {
+    // User belum login, arahkan ke halaman login.
+    header("location: ../index.php");
+    return;
+}
+
 require_once("../layout/header.php");
 require_once("../config/db.php");
 
