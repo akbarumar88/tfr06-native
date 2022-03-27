@@ -112,7 +112,7 @@ session_start();
         <div id="sidebar" class="p-3" style="flex:0.15">
             <div class="sidebar-section-group border-top border-bottom border-light">
                 <p class="sidebar-section-category mb-2">DASHBOARD</p>
-                <a href="<?= '' ?>/admin" class="d-block py-2 {{ Request::is('admin') ? 'active' : '' }}">
+                <a href="<?= '' ?>/admin" class="d-block py-2 <?= false ? 'active' : '' ?>">
                     <i class="fa fa-home menu-icon"></i>
                     <p class="sidebar-item mb-0 d-inline">Home</p>
                 </a>
@@ -120,11 +120,11 @@ session_start();
 
             <div class="sidebar-section-group border-top border-bottom border-light">
                 <p class="sidebar-section-category mb-2">MASTER</p>
-                <a href="<?= '' ?>/admin/kategori" class="d-block py-2 {{ Request::is('admin/kategori') ? 'active' : '' }}">
+                <a href="<?= '' ?>/kategori" class="d-block py-2 <?= false ? 'active' : '' ?>">
                     <i class="fa fa-chart-bar menu-icon"></i>
                     <p class="sidebar-item mb-0 d-inline">Kategori</p>
                 </a>
-                <a href="<?= '' ?>/admin/barang" class="d-block py-2 {{ Request::is('admin/barang') ? 'active' : '' }}">
+                <a href="<?= '' ?>/barang" class="d-block py-2 <?= false ? 'active' : '' ?>">
                     <i class="fa fa-briefcase menu-icon"></i>
                     <p class="sidebar-item mb-0 d-inline">Barang</p>
                 </a>

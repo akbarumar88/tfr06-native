@@ -112,3 +112,31 @@ function flash($name = '', $message = '', $type = '')
         display_all_flash_messages();
     }
 }
+
+function renderPaginationLinks($count, $pageSize)
+{
+    $currentPage = !empty($_GET['page']) ? $_GET['page'] : 1;
+    $totalPage = ceil($count / $pageSize);
+
+    $head = "
+    <nav aria-label='...'>
+        <ul class='pagination'>
+            <li class='page-item ". ($currentPage == 1 ? 'disabled' : '') ."'>
+                <span class='page-link'>Previous</span>
+            </li>
+    ";
+    $body = "";
+    $tail = "
+            <li class='page-item ". ($currentPage == $totalPage ? 'disabled' : '') ."'>
+                <a class='page-link' href='#'>Next</a>
+        </li>
+        </ul>
+    </nav>
+    ";
+
+    for ($i=1; $i <= $totalPage; $i++) {
+        $active = $i == $currentPage ? 'active' : '';
+        $body .= "<li class='page-item $active'><a class='page-link' href='#'>$i</a></li>";
+    }
+    return $head . $body . $tail;
+}
