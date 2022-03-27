@@ -76,7 +76,7 @@ $pageSize = 10;
             <tbody>
                 <?php foreach ($data as $i => $kategori) : ?>
                     <tr>
-                        <th scope="row"><?= $i + 1 ?></th>
+                        <th scope="row"><?= $offset + $i + 1 ?></th>
                         <td><?= $kategori['kategori'] ?></td>
                         <td>
                             <div class="d-flex">
