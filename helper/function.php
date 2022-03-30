@@ -117,26 +117,36 @@ function renderPaginationLinks($count, $pageSize)
 {
     $currentPage = !empty($_GET['page']) ? $_GET['page'] : 1;
     $totalPage = ceil($count / $pageSize);
+    
+    $pagePrev = $currentPage - 1;
+    $prevPageParams = http_build_query(array_merge($_GET, ['page' => $pagePrev]));
+
+    $pageNext = $currentPage + 1;
+    $nextPageParams = http_build_query(array_merge($_GET, ['page' => $pageNext]));
 
     $head = "
     <nav aria-label='...'>
         <ul class='pagination'>
             <li class='page-item ". ($currentPage == 1 ? 'disabled' : '') ."'>
-                <span class='page-link'>Previous</span>
+                <a class='page-link' href='?$prevPageParams'>Previous</a>
             </li>
     ";
     $body = "";
     $tail = "
             <li class='page-item ". ($currentPage == $totalPage ? 'disabled' : '') ."'>
-                <a class='page-link' href='#'>Next</a>
+                <a class='page-link' href='?$nextPageParams'>Next</a>
         </li>
         </ul>
     </nav>
     ";
 
     for ($i=1; $i <= $totalPage; $i++) {
+        $newParams = array_merge($_GET, ['page' => $i]);
+        $newParams = http_build_query($newParams);
+        // dd($newParams);
         $active = $i == $currentPage ? 'active' : '';
-        $body .= "<li class='page-item $active'><a class='page-link' href='#'>$i</a></li>";
+        $href = $i == $currentPage ? '#' : "?$newParams";
+        $body .= "<li class='page-item $active'><a class='page-link' href='$href'>$i</a></li>";
     }
     return $head . $body . $tail;
 }
