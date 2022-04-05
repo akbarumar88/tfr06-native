@@ -19,12 +19,14 @@ $dataCount = $conn
 
 $pageSize = 10;
 // dd($dataCount);
+// dd($_SESSION);
+flash("kategori");
 
 ?>
 
 <h3 class="mb-3">Data Kategori</h3>
 
-<a href="/admin/kategori/create" class="btn btn-success"><i class="fa fa-plus"></i> Tambah</a>
+<a href="/kategori/create.php" class="btn btn-success"><i class="fa fa-plus"></i> Tambah</a>
 <form action="<?= '' ?>/admin/kategori/exportpdf" class="d-inline" method="POST">
     <input type="hidden" name="q" value="<?= $_GET['q'] ?>">
     <button type="submit" class="btn btn-warning"><i class="fa fa-print"></i> Export PDF</button>

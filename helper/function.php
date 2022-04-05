@@ -1,9 +1,10 @@
 <?php
 
-function dd($data) {
+function dd($data, $die = true) {
     echo '<pre>';
     print_r($data);
     echo '</pre>';
+    if ($die) die;
 }
 
 const FLASH = 'FLASH_MESSAGES';
