@@ -62,7 +62,7 @@ flash("barang");
             <div class="d-flex align-items-center">
                 <p class="mb-0 mr-2">Pencarian: </p>
                 <form action="" method="get">
-                    <input type="hidden" name="page" value="<?= $_GET['page'] ?>">
+                    <!-- <input type="hidden" name="page" value="<?= $_GET['page'] ?>"> -->
                     <input type="hidden" name="entri" value="<?= $_GET['entri'] ?>">
                     <input type="text" name="q" id="" class="form-control" value="<?= $_GET['q'] ?>" />
                 </form>
