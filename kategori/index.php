@@ -82,10 +82,10 @@ flash("kategori");
                         <td><?= $kategori['kategori'] ?></td>
                         <td>
                             <div class="d-flex">
-                                <a href="/kategori/edit.php?id=<?= $kategori->id ?>" class="btn btn-warning mr-2"><i class="fa fa-edit"></i> Edit</a>
+                                <a href="/kategori/edit.php?id=<?= $kategori['id'] ?>" class="btn btn-warning mr-2"><i class="fa fa-edit"></i> Edit</a>
 
                                 <form action="/kategori/hapus.php" method="POST">
-                                    <input type="hidden" name="id" value="<?= $kategori->id ?>">
+                                    <input type="hidden" name="id" value="<?= $kategori['id'] ?>">
                                     <button onclick="return confirm('Apakah anda yakin ingin menghapus data?')" type="submit" class="btn btn-danger"><i class="fa fa-trash"></i>
                                         Hapus</button>
                                 </form>
